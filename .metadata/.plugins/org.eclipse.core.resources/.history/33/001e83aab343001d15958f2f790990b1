@@ -1,0 +1,38 @@
+package oui;
+
+import java.awt.*;
+import java.awt.event.ActionListener;
+
+import javax.swing.*;
+
+public class DataPanel extends JPanel implements ActionListener {
+	private JLabel lblRows;
+	private JTextField txtRows;
+	private JButton btnCreate;
+	private JProgressBar progressBar;
+	
+	public DataPanel(JTabbedPane tabPane) {
+		tabPane.addTab("Data", this);
+		initComponents();
+	}
+	
+	private void initComponents() {
+		this.setBorder(BorderFactory.createMatteBorder(25, 25, 25, 25, Color.darkGray));
+		this.setBackground(new Color(0, 0, 0));
+		
+		lblRows = new JLabel();
+		lblRows.setFont(new Font("Monospaced", 0, 50)); // NOI18N
+		lblRows.setForeground (new Color(255, 255, 255));
+		lblRows.setText("Rows: ");
+
+		txtRows = new JTextField("");
+		txtRows.setColumns(10);
+		txtRows.setFont(new Font("Monospaced", 0, 50)); // NOI18N
+		
+		btnCreate = new JButton();
+		btnCreate.setFont(new Font("Monospaced", 0, 50)); // NOI18N
+		btnCreate.setText("Create Test Data");
+		btnCreate.addActionListener(this);
+
+	}
+}
